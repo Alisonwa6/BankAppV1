@@ -10,13 +10,14 @@ class BankAccount {
 private:
     std::string m_accHolder;
     std::string m_accNum;
+protected:
     double m_balance;
 public:
     BankAccount(const std::string &accHolder, const std::string &accNum, double balance);
-    ~BankAccount(); // default destructor
-    void deposit(double amount);
-    bool withdraw(double amount);
-    void display();
+    virtual ~BankAccount(); // default destructor
+    virtual void deposit(double amount);
+    virtual bool withdraw(double amount)=0; // BankAccount is now an abstract class.
+    virtual void display();
 };
 
 
